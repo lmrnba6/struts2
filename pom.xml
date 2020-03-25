@@ -228,6 +228,7 @@
                     <url>http://localhost:8080/</url>
                     <server>TomcatServer</server>
                     <path>/</path>
+                    <update>true</update>
                     <username>admin</username>
                     <password>admin</password>
                 </configuration>
