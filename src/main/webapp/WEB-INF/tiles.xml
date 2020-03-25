@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+
+<tiles-definitions>
+
+    <definition name="home" template="/pages/layout.jsp">
+        <put-attribute name="title" value="B-Bank"/>
+        <put-attribute name="header" value="/pages/header.jsp"/>
+        <put-attribute name="content" value="/pages/content.jsp"/>
+        <put-attribute name="footer" value="/pages/footer.jsp"/>
+    </definition>
+
+    <definition name="login" extends="home">
+        <put-attribute name="content" value="/pages/login.jsp"/>
+    </definition>
+
+    <definition name="admin" extends="home">
+        <put-attribute name="content" value="/js/react/index.html"/>
+    </definition>
+
+    <definition name="tweet" extends="home">
+        <put-attribute name="content" value="/pages/tweet.jsp"/>
+    </definition>
+
+    <definition name="addTweet" extends="home">
+        <put-attribute name="content" value="/pages/addTweet.jsp"/>
+    </definition>
+
+    <definition name="editTweet" extends="home">
+        <put-attribute name="content" value="/pages/editTweet.jsp"/>
+    </definition>
+
+    <definition name="register" extends="home">
+        <put-attribute name="content" value="/pages/register.jsp"/>
+    </definition>
+
+    <definition name="error" extends="home">
+        <put-attribute name="content" value="/pages/error.jsp"/>
+    </definition>
+
+</tiles-definitions>

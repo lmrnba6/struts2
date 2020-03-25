@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.objectFactory" value="spring"/>
+    <constant name="struts.objectFactory.spring.autoWire" value="type"/>
+    <constant name="struts.custom.i18n.resources" value="global"/>
+
+
+    <package name="default" extends="struts-default">
+
+        <result-types>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+            <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+        </result-types>
+
+        <interceptors>
+            <interceptor name="auth" class="com.struts.jpa.interceptors.AuthInterceptor"/>
+            <interceptor-stack name="authStack">
+                <interceptor-ref name="defaultStack"/>
+                <interceptor-ref name="auth"/>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="authStack"></default-interceptor-ref>
+
+        <global-results>
+            <result name="index" type="tiles">home</result>
+            <result name="login" type="tiles">login</result>
+            <result name="error" type="tiles">error</result>
+        </global-results>
+
+        <action name="getUser" class="com.struts.jpa.actions.RestAction" method="getUser">
+            <interceptor-ref name="defaultStack" />
+            <result name="success" type="json">
+                <param name="noCache">true</param>
+                <param name="excludeNullProperties">true</param>
+                <param name="root">users</param>
+            </result>
+        </action>
+
+        <action name="admin" class="com.struts.jpa.actions.IndexAction" method="admin">
+            <result name="success" type="tiles">admin</result>
+        </action>
+
+        <action name="index" class="com.struts.jpa.actions.IndexAction" method="index">
+            <result name="success" type="tiles">home</result>
+        </action>
+        <action name="tweet" class="com.struts.jpa.actions.TweetAction" method="tweet">
+            <result name="success" type="tiles">tweet</result>
+        </action>
+        <action name="addTweet" class="com.struts.jpa.actions.TweetAction" method="addTweet">
+            <result name="input" type="tiles">tweet</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">tweet</param>
+            </result>
+        </action>
+        <action name="updateTweet" class="com.struts.jpa.actions.TweetAction" method="updateTweet">
+            <result name="input" type="tiles">tweet</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">tweet</param>
+            </result>
+        </action>
+        <action name="deleteTweet" class="com.struts.jpa.actions.TweetAction" method="deleteTweet">
+            <result name="success" type="redirectAction">
+                <param name="actionName">tweet</param>
+            </result>
+        </action>
+        <action name="editTweet" class="com.struts.jpa.actions.TweetAction" method="editTweet">
+            <result name="success" type="tiles">editTweet</result>
+        </action>
+        <action name="add" class="com.struts.jpa.actions.TweetAction" method="add">
+            <result name="success" type="tiles">addTweet</result>
+        </action>
+        <action name="tweets" class="com.struts.jpa.actions.TweetAction" method="tweet">
+            <result name="success" type="tiles">tweet</result>
+        </action>
+        <action name="login" class="com.struts.jpa.actions.IndexAction" method="login">
+            <result name="success" type="tiles">login</result>
+        </action>
+        <action name="register" class="com.struts.jpa.actions.IndexAction" method="register">
+            <result name="success" type="tiles">register</result>
+        </action>
+        <action name="signin" class="com.struts.jpa.actions.LoginAction" method="signin">
+            <interceptor-ref name="defaultStack" />
+            <result name="success" type="redirectAction">
+                <param name="actionName">index</param>
+            </result>            <result name="input" type="tiles">login</result>
+            <result name="error" type="tiles">login</result>
+        </action>
+        <action name="signup" class="com.struts.jpa.actions.LoginAction" method="signup">
+            <interceptor-ref name="defaultStack" />
+            <result name="success" type="redirectAction">
+                <param name="actionName">login</param>
+            </result>            <result name="input" type="tiles">register</result>
+        </action>
+        <action name="signout" class="com.struts.jpa.actions.LoginAction" method="signout">
+            <interceptor-ref name="defaultStack" />
+            <result name="success" type="redirectAction">
+                <param name="actionName">login</param>
+            </result>        </action>
+
+    </package>
+
+</struts>
