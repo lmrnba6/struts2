@@ -21,7 +21,7 @@
         <tiles.version>2.5.22</tiles.version>
         <hibernate.manager>5.4.12.Final</hibernate.manager>
         <struts2.version>2.5.22</struts2.version>
-        <spring.batch.version>3.0.8.RELEASE</spring.batch.version>
+        <spring.batch.version>4.0.0.RELEASE</spring.batch.version>
     </properties>
 
     <dependencies>
