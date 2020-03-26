@@ -30,7 +30,7 @@
                 <s:a action="signout" id="logo"><s:text name="global.logout"/></s:a>
             </s:else>
                 <s:select  value="#request.locale" name="langs"  list="{'en' ,'fr'}" id="langSelect"/>
-            <s:a action="admin" id="logo">ReactJscvbcvb.</s:a>
+            <s:a action="admin" id="logo">ReactJs</s:a>
 
 
         <%--            <s:a action="language?lang=en">English</s:a>--%>
