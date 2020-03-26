@@ -1,0 +1,55 @@
+
+.Box{
+    width: 300px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.Box h1{
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.Box input[type = "text"],.Box input[ type = "Password"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #03A9F4;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.Box input[type = "text"]:focus,.Box input[ type = "Password"]:focus{
+    width: 280px;
+    border-color: #8BC34A;
+}
+
+.Box #login, .btn{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #8BC34A;
+    padding: 14px 40px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.Box #login:hover{
+    background: #8BC34A;
+}
+
+.Box .error {
+    list-style: none;
+    color: red;
+    padding: 0;
+}
