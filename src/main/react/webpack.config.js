@@ -1,7 +1,10 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
+    output: {
+        publicPath: '../../js/react/'
+    },
     resolve: {
         extensions: ['.js', '.jsx']
     },
