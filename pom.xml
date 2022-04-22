@@ -17,7 +17,7 @@
         <postgres.version>42.2.11</postgres.version>
         <serializer.version>2.8.1</serializer.version>
         <spring.data>2.2.5.RELEASE</spring.data>
-        <struts2.version>2.5.22</struts2.version>
+        <struts2.version>2.5.30</struts2.version>
         <tiles.version>2.5.22</tiles.version>
         <hibernate.manager>5.4.12.Final</hibernate.manager>
         <struts2.version>2.5.22</struts2.version>
